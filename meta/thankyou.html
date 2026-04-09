@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KDDR9H7C');</script>
+<!-- End Google Tag Manager -->
+
+        <script type="text/javascript">
+        // (function() {
+        // var leadData = {
+        //     "PersonEmail": "ylayalysalas@gmail.com", 
+        //     "FirstName": "ylayaly",
+        //     "LastName": "salas",
+        //     "Company": "Quo Agency",
+        //     "Phone": "2345678909",
+        //     "State": "FL",
+        //     "Business_type__c": "Sistemas Integrator", 
+        //     "MSI_01__c": "0000",
+        //     "Page_URL__c": "ylayaly.github.io",
+        //     "Referrer_URL__c": "ylayaly.github.io"
+        // };
+
+        // // Convert to JSON and safe-encode for UTF-8 (handles accents, curly quotes, etc.)
+        // var jsonString = JSON.stringify(leadData);
+        // var encodedData = btoa(unescape(encodeURIComponent(jsonString)));
+        
+        // var msiValue = "0000";
+        // var target = "https://ylayaly.github.io";
+
+        // // Redirect the main window to the thank you page
+        // window.top.location.href = target + "?ld=" + encodedData + "&msi=" + encodeURIComponent(msiValue);
+        // })();
+        </script>
+
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    var leadData = {
+            "PersonEmail": "ylayalysalas@gmail.com", 
+            "FirstName": "ylayaly",
+            "LastName": "salas",
+            "Company": "Quo Agency",
+            "Phone": "2345678909",
+            "State": "FL",
+            "Business_type__c": "Sistemas Integrator", 
+            "MSI_01__c": "0000",
+            "Page_URL__c": "ylayaly.github.io",
+            "Referrer_URL__c": "ylayaly.github.io"
+        };
+
+        // Convert to JSON and safe-encode for UTF-8 (handles accents, curly quotes, etc.)
+        var jsonString = JSON.stringify(leadData);
+        var encodedData = btoa(unescape(encodeURIComponent(jsonString)));
+
+        // console.log(encodedData)
+
+    const eventId = 'evt_'+Date.now();
+
+    fbq('init', '762344026763472',{
+        email: leadData.PersonEmail,
+        firstName: leadData.FirstName,
+        lastName: leadData.LastName
+    });
+    fbq('track', 'PageView');
+    fbq('trackCustom', 'CompleteForm', {
+        value: 0.00,
+        currency: 'USD'
+    }, {
+        eventID: eventId,
+    });
+
+    function getFbc() {
+  // Paso 1: Revisa si hay fbclid en la URL actual
+  const urlParams = new URLSearchParams(window.location.search);
+  const fbclid = urlParams.get('fbclid');
+
+  if (fbclid) {
+    // Formato oficial de Meta: versión.subdominio.tiempo.fbclid
+    const fbc = `fb.1.${Date.now()}.${fbclid}`;
+
+    // Guárdalo 90 días porque el usuario puede convertir después
+    document.cookie = `_fbc=${fbc}; path=/; max-age=7776000; SameSite=Lax`;
+    return fbc;
+  }
+
+  // Paso 2: Si no hay en URL, busca si ya lo guardaste antes
+  const cookieValue = document.cookie
+   .split('; ')
+   .find(row => row.startsWith('_fbc='))
+   ?.split('=')[1];
+
+  return cookieValue || null;
+}
+
+function getFbp() {
+  const cookieValue = document.cookie
+   .split('; ')
+   .find(row => row.startsWith('_fbp='))
+   ?.split('=')[1];
+
+  return cookieValue || null;
+}
+
+    const formData = {
+        email: leadData.PersonEmail,
+        phone: leadData.Phone,
+        fname: leadData.FirstName,
+        lname: leadData.LastName,
+        fbp: getFbp(), // fb.1.1712600000.1234567890
+        fbc: getFbc(), // fb.1.1712681234.IwAR0abc... o null
+        eventId: eventId, // El mismo que usas en fbq
+        userAgent: navigator.userAgent,
+        pageUrl: window.location.href
+    };
+
+    console.log('Data to send to backend:', formData);
+
+    // fetch('/api/contacto', {
+    //     method: 'POST',
+    //     body: JSON.stringify(formData)
+    // });
+
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=762344026763472&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KDDR9H7C"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <main>
+        <section style="text-align: center; margin-top: 50px;">
+            <h1>Meta Pixel Test | Thank You Page</h1>
+            <p>This page is used to test the Meta Pixel integration.</p>
+            <p>If you see this page, the Meta Pixel code is likely working correctly.</p>
+        </section>
+
+        <!-- <section>
+            <form action="/postData.html" method="POST" style="text-align: center; margin-top: 30px;">
+                <input type="hidden" name="event" value="TestEvent">
+                <input type="text" name="fName" placeholder="First Name" style="padding: 10px; font-size: 16px; margin-right: 10px;">
+                <input type="text" name="lName" placeholder="Last Name" style="padding: 10px; font-size: 16px; margin-right: 10px;">
+                <button type="submit" style="padding: 10px 20px; font-size: 16px;">Send Test Event</button>
+            </form>
+        </section> -->
+    </main>
+    
+    <!-- <script type="module" src="./zapierCode.js"></script> -->
+</body>
+</html>
